@@ -11,6 +11,8 @@
 
 #pragma once
 
+#include <sstream>
+
 #include <gtk/gtk.h>
 
 #include "InputStreamException.h"
@@ -44,6 +46,8 @@ private:
     static string getType(char type);
 
 private:
+    std::istringstream istream;
     GString* str = nullptr;
-    gsize pos = 0;
+    size_t pos = 0;
+    size_t len = 0;
 };
